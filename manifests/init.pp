@@ -90,7 +90,7 @@ class nodejs(
     require => Anchor['nodejs::repo']
   }
 
-  if $::operatingsystem != 'ubuntu' or $::lsbdistcodename == 'Precise' {
+  if $::operatingsystem != 'ubuntu' or $::lsbdistcodename != 'Precise' {
     package { 'npm':
       name    => $nodejs::params::npm_pkg,
       ensure  => present,
